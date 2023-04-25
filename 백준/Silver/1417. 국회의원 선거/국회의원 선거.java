@@ -1,25 +1,22 @@
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.PriorityQueue;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-
-        ArrayList<Integer> integers = new ArrayList<>();
-
         int one = 0;
         int result = 0;
-
         int count = Integer.parseInt(br.readLine());
-
+        PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());
 
         for(int i = 0; i < count; i++) {
             if(i == 0) {
                 one = Integer.parseInt(br.readLine());
             } else {
-                integers.add(Integer.parseInt(br.readLine()));
+                pq.add(Integer.parseInt(br.readLine()));
             }
         }
 
@@ -27,13 +24,10 @@ public class Main {
             System.out.println(0);
             return;
         }
-        Collections.sort(integers, Collections.reverseOrder());
-        while (integers.get(0) >= one) {
+
+        while (pq.peek() >= one) {
             one += 1;
-            integers.set(0, integers.get(0) - 1);
-
-            Collections.sort(integers, Collections.reverseOrder());
-
+            pq.add(pq.poll() - 1);
             result++;
         }
 
