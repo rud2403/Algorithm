@@ -12,7 +12,7 @@ public class Main {
         int n = Integer.parseInt(br.readLine()); // 지하의 개수
         String[] m = br.readLine().split(" "); // 도로
         String[] l = br.readLine().split(" "); // 도시
-        int result = 0;
+        long result = 0;
 
         ArrayList<Integer> road = new ArrayList<>();
         ArrayList<Integer> city = new ArrayList<>();
