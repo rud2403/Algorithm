@@ -20,9 +20,6 @@ class Solution {
             tempCur[0] = cur[0];
             tempCur[1] = cur[1];
             
-            System.out.println("i : " + i);
-            System.out.println("시작 위치 : " + tempCur[0] + ", " + tempCur[1]);
-            
             for(int j = 0; j < num; j++) {
                if("E".equals(act)) {
                    if((park[tempCur[0]].length() - 1) >= (tempCur[1] + 1)) {
@@ -30,7 +27,6 @@ class Solution {
                          tempCur = cur;
                          break;
                      } else { // 진행
-                         System.out.println("----------------------------------------------");
                          tempCur[1]++;
                      }
                      
@@ -80,12 +76,9 @@ class Solution {
                    }
                }
             }
-            
             cur = tempCur;
-            
         }
-        
-        
+
         return cur;
     }
 }
