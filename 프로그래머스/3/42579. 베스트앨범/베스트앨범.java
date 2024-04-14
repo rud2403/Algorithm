@@ -35,7 +35,7 @@ class Solution {
             HashMap<Integer, Integer> map = music.get(key);
             List<Integer> genre_key = new ArrayList(map.keySet());
             
-            Collections.sort(genre_key, (s1, s2) -> map.get(s2) - (map.get(s1)));
+            genre_key.sort((s1, s2) -> map.get(s2) - (map.get(s1)));
             
             answer.add(genre_key.get(0));
             
