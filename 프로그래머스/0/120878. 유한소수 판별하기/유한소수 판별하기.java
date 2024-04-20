@@ -10,25 +10,17 @@ class Solution {
         // 2. 분모 소인수 분해
         b = b / gcd; // 분모를 최대 공약수로 나누기
         
-        ArrayList<Integer> list = new ArrayList<>();
-        
-        for(int i = 2; i <= b; i++) {
-            if(b >= 2) {
-                while(b % i == 0) {
-                    list.add(i);
-                    b = b / i;
-                }
-                
-            }
+        while(b % 2 == 0) {
+            b /= 2;
+            System.out.println("b /= 2: " + b);
         }
         
-        for(Integer num : list){
-            if(num != 2 && num != 5) {
-                answer = 2;
-            }
+        while(b % 5 == 0) {
+            b /= 5;
+            System.out.println("b /= 5: " + b);
         }
         
-        return answer;
+        return b == 1 ? 1 : 2;
     }
     
     public static int gcd(int a, int b) {
