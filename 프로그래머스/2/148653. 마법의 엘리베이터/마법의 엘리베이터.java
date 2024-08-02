@@ -20,21 +20,14 @@ class Solution {
             storey /= 10; // 마지막 숫자 뗀 나머지 수
             
             System.out.println("num(마지막 수) : " +  num);
-            System.out.println("앞자리 수  : " +  storey % 10);
-            if(num > 5) {
+            
+            if(num > 5 || storey % 10 == 9) {
                 answer += 10 - num;
                 storey++;
                 
                 System.out.println("answer : " +  answer);
                 System.out.println("마지막에서 떼고 남은 수111 : " + storey);
                 
-            } else if (num == 5) {
-                if(storey % 10 >= 5) {
-                    answer += 5;
-                    storey++;
-                } else {
-                    answer += 5;
-                }
             } else {
                 answer += num;
                 System.out.println("answer : " +  answer);
