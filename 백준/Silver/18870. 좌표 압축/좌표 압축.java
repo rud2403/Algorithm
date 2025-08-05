@@ -7,13 +7,14 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        String[] strs = br.readLine().split(" ");
+
+//        StringTokenizer st = new StringTokenizer(br.readLine());
         int[] original = new int[n];
         Set<Integer> set = new HashSet<>();
-        
+
         for(int i = 0; i < n; i++) {
-            original[i] = Integer.parseInt(st.nextToken());
+            original[i] = Integer.parseInt(strs[i]);
             set.add(original[i]);
         }
 
@@ -29,7 +30,7 @@ public class Main {
         for(int i = 0; i < n; i++) {
             sb.append(map.get(original[i])).append(" ");
         }
-        
+
         System.out.println(sb);
 
     }
