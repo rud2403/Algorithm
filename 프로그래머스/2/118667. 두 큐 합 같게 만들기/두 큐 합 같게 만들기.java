@@ -1,8 +1,5 @@
 import java.util.*;
 
-// 어떻게 안되는 걸 판별할 수 있을지?
-// 준 쪽에서 한개만 남으면 안되는 듯
-
 class Solution {
     public int solution(int[] queue1, int[] queue2) {
         int answer = 0;
