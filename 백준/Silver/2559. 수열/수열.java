@@ -17,16 +17,10 @@ public class Main {
         int sum = 0;
         for(int i = 0; i <= k - 1; i++) sum += a[i];
         int answer = sum;
-        int start = 0;
-        int end = k - 1;
 
-        while(end < a.length - 1) { // end가 배열의 마지막으로 올 때 까지
-            sum -= a[start];
-            start += 1;
-            end += 1;
-            sum+= a[end];
-
-            answer = Math.max(answer, sum);
+        for(int r = k; r < n; r++) {
+            sum += a[r] - a[r - k];
+            if(sum > answer) answer = sum;
         }
 
         System.out.println(answer);
